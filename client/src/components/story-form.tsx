@@ -92,48 +92,52 @@ export default function StoryForm({ onSuccess, onCancel }: StoryFormProps) {
   };
 
   return (
-    <Card className="bg-white shadow-lg mb-8">
+    <Card className="bg-white shadow-2xl mb-8 rounded-2xl border-light-gray animate-fade-in">
       <CardContent className="p-8">
-        <h3 className="text-2xl font-bold text-heritage-brown mb-6 flex items-center">
-          <Feather className="mr-3 text-heritage-peru" size={24} />
+        <h3 className="text-3xl font-bold text-gray-dark mb-8 flex items-center">
+          <Feather className="mr-3 text-lavender-primary" size={28} />
           Share Your Story
         </h3>
         
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div>
-              <Label htmlFor="title" className="text-heritage-brown font-semibold">
+            <div className="space-y-2">
+              <Label htmlFor="title" className="text-gray-dark font-semibold text-sm">
                 Story Title *
               </Label>
               <Input
                 id="title"
                 {...form.register("title")}
                 placeholder="Give your story a meaningful title"
-                className="mt-2 border-heritage-burlywood focus:border-heritage-brown"
+                className={`mt-1 border-light-gray focus:border-lavender-primary focus:ring-lavender-primary rounded-xl transition-all duration-200 ${
+                  form.formState.errors.title ? 'border-red-300 focus:border-red-500' : ''
+                }`}
               />
               {form.formState.errors.title && (
-                <p className="text-red-500 text-sm mt-1">{form.formState.errors.title.message}</p>
+                <p className="text-red-500 text-sm mt-1 animate-fade-in">{form.formState.errors.title.message}</p>
               )}
             </div>
             
-            <div>
-              <Label htmlFor="eventDate" className="text-heritage-brown font-semibold">
+            <div className="space-y-2">
+              <Label htmlFor="eventDate" className="text-gray-dark font-semibold text-sm">
                 Date of Event *
               </Label>
               <Input
                 id="eventDate"
                 type="date"
                 {...form.register("eventDate")}
-                className="mt-2 border-heritage-burlywood focus:border-heritage-brown"
+                className={`mt-1 border-light-gray focus:border-lavender-primary focus:ring-lavender-primary rounded-xl transition-all duration-200 ${
+                  form.formState.errors.eventDate ? 'border-red-300 focus:border-red-500' : ''
+                }`}
               />
               {form.formState.errors.eventDate && (
-                <p className="text-red-500 text-sm mt-1">{form.formState.errors.eventDate.message}</p>
+                <p className="text-red-500 text-sm mt-1 animate-fade-in">{form.formState.errors.eventDate.message}</p>
               )}
             </div>
           </div>
           
-          <div>
-            <Label htmlFor="description" className="text-heritage-brown font-semibold">
+          <div className="space-y-2">
+            <Label htmlFor="description" className="text-gray-dark font-semibold text-sm">
               Story Description *
             </Label>
             <Textarea
@@ -141,10 +145,12 @@ export default function StoryForm({ onSuccess, onCancel }: StoryFormProps) {
               {...form.register("description")}
               rows={6}
               placeholder="Tell your story in detail. Include names, places, and emotions that make this memory special..."
-              className="mt-2 border-heritage-burlywood focus:border-heritage-brown resize-none"
+              className={`mt-1 border-light-gray focus:border-lavender-primary focus:ring-lavender-primary resize-none rounded-xl transition-all duration-200 ${
+                form.formState.errors.description ? 'border-red-300 focus:border-red-500' : ''
+              }`}
             />
             {form.formState.errors.description && (
-              <p className="text-red-500 text-sm mt-1">{form.formState.errors.description.message}</p>
+              <p className="text-red-500 text-sm mt-1 animate-fade-in">{form.formState.errors.description.message}</p>
             )}
           </div>
           
@@ -153,17 +159,20 @@ export default function StoryForm({ onSuccess, onCancel }: StoryFormProps) {
             selectedFiles={selectedFiles}
           />
           
-          <div className="flex flex-col sm:flex-row gap-4 pt-6">
+          <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-light-gray">
             <Button 
               type="submit" 
               disabled={createStoryMutation.isPending}
-              className="bg-heritage-brown hover:bg-heritage-chocolate text-white flex-1"
+              className="bg-lavender-primary hover:bg-lavender-secondary text-white flex-1 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 font-semibold"
             >
               {createStoryMutation.isPending ? (
-                "Saving..."
+                <div className="flex items-center">
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                  Saving Story...
+                </div>
               ) : (
                 <>
-                  <Save className="mr-2" size={16} />
+                  <Save className="mr-2" size={18} />
                   Save Story
                 </>
               )}
@@ -172,9 +181,9 @@ export default function StoryForm({ onSuccess, onCancel }: StoryFormProps) {
               type="button" 
               variant="outline"
               onClick={onCancel}
-              className="border-heritage-burlywood text-heritage-brown hover:bg-heritage-beige flex-1"
+              className="border-light-gray text-gray-medium hover:bg-light-gray hover:text-gray-dark flex-1 py-3 rounded-xl transition-all duration-200 font-semibold"
             >
-              <X className="mr-2" size={16} />
+              <X className="mr-2" size={18} />
               Cancel
             </Button>
           </div>

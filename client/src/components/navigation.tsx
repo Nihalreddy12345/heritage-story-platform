@@ -17,44 +17,44 @@ export default function Navigation({ user }: NavigationProps) {
   };
 
   return (
-    <header className="bg-white shadow-md border-b-2 border-heritage-peru">
+    <header className="glass-effect sticky top-0 z-40 border-b border-light-gray shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center space-x-3">
-            <TreePine className="text-heritage-brown" size={32} />
-            <h1 className="text-2xl font-bold text-heritage-brown">Heritage Stories</h1>
+            <TreePine className="text-lavender-primary" size={32} />
+            <h1 className="text-2xl font-bold text-gray-dark">Heritage Stories</h1>
           </div>
           
           <nav className="hidden md:flex items-center space-x-6">
-            <a href="#timeline" className="text-heritage-brown hover:text-heritage-chocolate transition-colors font-medium flex items-center">
+            <a href="#timeline" className="text-gray-medium hover:text-lavender-primary transition-colors font-medium flex items-center hover-lift">
               <History className="mr-2" size={16} />
               History
             </a>
-            <a href="#stories" className="text-heritage-brown hover:text-heritage-chocolate transition-colors font-medium flex items-center">
+            <a href="#stories" className="text-gray-medium hover:text-lavender-primary transition-colors font-medium flex items-center hover-lift">
               <BookOpen className="mr-2" size={16} />
               My Stories
             </a>
-            <a href="#family" className="text-heritage-brown hover:text-heritage-chocolate transition-colors font-medium flex items-center">
+            <a href="#family" className="text-gray-medium hover:text-lavender-primary transition-colors font-medium flex items-center hover-lift">
               <Users className="mr-2" size={16} />
               Family
             </a>
             
             {user && (
               <div className="flex items-center space-x-3">
-                <Avatar className="w-8 h-8 border-2 border-heritage-peru">
+                <Avatar className="w-8 h-8 border-2 border-lavender-primary hover-lift">
                   <AvatarImage src={user.profileImageUrl || undefined} alt={`${user.firstName} ${user.lastName}`} />
-                  <AvatarFallback className="bg-heritage-beige text-heritage-brown text-sm">
+                  <AvatarFallback className="bg-lavender-light text-lavender-primary text-sm">
                     {getInitials(user.firstName || undefined, user.lastName || undefined)}
                   </AvatarFallback>
                 </Avatar>
-                <span className="text-heritage-brown font-medium">
+                <span className="text-gray-dark font-medium">
                   {user.firstName} {user.lastName}
                 </span>
                 <Button 
                   onClick={handleLogout}
                   variant="outline"
                   size="sm"
-                  className="border-heritage-burlywood text-heritage-brown hover:bg-heritage-beige"
+                  className="border-light-gray text-gray-medium hover:bg-lavender-light hover:text-lavender-primary rounded-xl"
                 >
                   Logout
                 </Button>
@@ -63,7 +63,7 @@ export default function Navigation({ user }: NavigationProps) {
           </nav>
           
           {/* Mobile Menu Button */}
-          <Button variant="ghost" className="md:hidden text-heritage-brown">
+          <Button variant="ghost" className="md:hidden text-gray-medium hover:text-lavender-primary">
             <Users size={20} />
           </Button>
         </div>

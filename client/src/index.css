@@ -3,34 +3,37 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(60, 4.8%, 95.9%);
-  --foreground: hsl(20, 14.3%, 4.1%);
-  --muted: hsl(60, 4.8%, 95.9%);
-  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --background: hsl(0, 0%, 98%);
+  --foreground: hsl(218, 27%, 15%);
+  --muted: hsl(220, 14%, 96%);
+  --muted-foreground: hsl(215, 16%, 47%);
   --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --popover-foreground: hsl(218, 27%, 15%);
   --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(20, 14.3%, 4.1%);
-  --border: hsl(20, 5.9%, 90%);
-  --input: hsl(20, 5.9%, 90%);
-  --primary: hsl(20, 44%, 38%);
+  --card-foreground: hsl(218, 27%, 15%);
+  --border: hsl(220, 20%, 90%);
+  --input: hsl(220, 20%, 95%);
+  --primary: hsl(262, 83%, 58%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: hsl(60, 4.8%, 95.9%);
-  --secondary-foreground: hsl(24, 9.8%, 10%);
-  --accent: hsl(60, 4.8%, 95.9%);
-  --accent-foreground: hsl(24, 9.8%, 10%);
+  --secondary: hsl(220, 14%, 96%);
+  --secondary-foreground: hsl(218, 27%, 15%);
+  --accent: hsl(220, 14%, 96%);
+  --accent-foreground: hsl(218, 27%, 15%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(60, 9.1%, 97.8%);
-  --ring: hsl(20, 14.3%, 4.1%);
-  --radius: 0.5rem;
+  --ring: hsl(262, 83%, 58%);
+  --radius: 0.75rem;
   
-  /* Heritage theme colors */
-  --heritage-brown: hsl(20, 44%, 38%);
-  --heritage-chocolate: hsl(20, 77%, 46%);
-  --heritage-beige: hsl(60, 29%, 94%);
-  --heritage-cornsilk: hsl(54, 100%, 97%);
-  --heritage-peru: hsl(30, 58%, 56%);
-  --heritage-burlywood: hsl(34, 57%, 70%);
+  /* Modern elegant theme colors */
+  --lavender-primary: hsl(262, 83%, 58%);
+  --lavender-secondary: hsl(267, 57%, 78%);
+  --lavender-light: hsl(270, 60%, 95%);
+  --sky-blue: hsl(199, 89%, 48%);
+  --sky-blue-light: hsl(204, 100%, 94%);
+  --soft-white: hsl(0, 0%, 98%);
+  --light-gray: hsl(220, 14%, 96%);
+  --gray-medium: hsl(215, 16%, 47%);
+  --gray-dark: hsl(218, 27%, 15%);
 }
 
 .dark {
@@ -63,81 +66,164 @@
 
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    background-color: var(--heritage-beige);
-    color: var(--heritage-brown);
+    background-color: var(--soft-white);
+    color: var(--gray-dark);
   }
 }
 
 @layer utilities {
-  .heritage-brown {
-    color: var(--heritage-brown);
+  /* Lavender colors */
+  .lavender-primary {
+    color: var(--lavender-primary);
   }
   
-  .bg-heritage-brown {
-    background-color: var(--heritage-brown);
+  .bg-lavender-primary {
+    background-color: var(--lavender-primary);
   }
   
-  .heritage-chocolate {
-    color: var(--heritage-chocolate);
+  .lavender-secondary {
+    color: var(--lavender-secondary);
   }
   
-  .bg-heritage-chocolate {
-    background-color: var(--heritage-chocolate);
+  .bg-lavender-secondary {
+    background-color: var(--lavender-secondary);
   }
   
-  .heritage-beige {
-    color: var(--heritage-beige);
+  .lavender-light {
+    color: var(--lavender-light);
   }
   
-  .bg-heritage-beige {
-    background-color: var(--heritage-beige);
+  .bg-lavender-light {
+    background-color: var(--lavender-light);
   }
   
-  .heritage-cornsilk {
-    color: var(--heritage-cornsilk);
+  /* Sky blue colors */
+  .sky-blue {
+    color: var(--sky-blue);
   }
   
-  .bg-heritage-cornsilk {
-    background-color: var(--heritage-cornsilk);
+  .bg-sky-blue {
+    background-color: var(--sky-blue);
   }
   
-  .heritage-peru {
-    color: var(--heritage-peru);
+  .sky-blue-light {
+    color: var(--sky-blue-light);
   }
   
-  .bg-heritage-peru {
-    background-color: var(--heritage-peru);
+  .bg-sky-blue-light {
+    background-color: var(--sky-blue-light);
   }
   
-  .heritage-burlywood {
-    color: var(--heritage-burlywood);
+  /* Neutral colors */
+  .soft-white {
+    color: var(--soft-white);
   }
   
-  .bg-heritage-burlywood {
-    background-color: var(--heritage-burlywood);
+  .bg-soft-white {
+    background-color: var(--soft-white);
   }
   
-  .border-heritage-brown {
-    border-color: var(--heritage-brown);
+  .light-gray {
+    color: var(--light-gray);
   }
   
-  .border-heritage-chocolate {
-    border-color: var(--heritage-chocolate);
+  .bg-light-gray {
+    background-color: var(--light-gray);
   }
   
-  .border-heritage-beige {
-    border-color: var(--heritage-beige);
+  .gray-medium {
+    color: var(--gray-medium);
   }
   
-  .border-heritage-cornsilk {
-    border-color: var(--heritage-cornsilk);
+  .bg-gray-medium {
+    background-color: var(--gray-medium);
   }
   
-  .border-heritage-peru {
-    border-color: var(--heritage-peru);
+  .gray-dark {
+    color: var(--gray-dark);
   }
   
-  .border-heritage-burlywood {
-    border-color: var(--heritage-burlywood);
+  .bg-gray-dark {
+    background-color: var(--gray-dark);
+  }
+  
+  /* Border colors */
+  .border-lavender-primary {
+    border-color: var(--lavender-primary);
+  }
+  
+  .border-lavender-secondary {
+    border-color: var(--lavender-secondary);
+  }
+  
+  .border-sky-blue {
+    border-color: var(--sky-blue);
+  }
+  
+  .border-light-gray {
+    border-color: var(--light-gray);
+  }
+  
+  /* Animations and effects */
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out;
+  }
+  
+  .animate-pulse-subtle {
+    animation: pulseSubtle 2s infinite;
+  }
+  
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
   }
 }

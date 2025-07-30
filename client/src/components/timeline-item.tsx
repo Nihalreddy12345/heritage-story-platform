@@ -81,66 +81,66 @@ export default function TimelineItem({ story, isLast }: TimelineItemProps) {
   return (
     <div className={`relative flex flex-col lg:flex-row items-start lg:items-center ${isLast ? '' : 'mb-12'}`}>
       {/* Timeline Dot */}
-      <div className="hidden lg:flex absolute left-6 w-5 h-5 bg-heritage-brown rounded-full border-4 border-white shadow-lg z-10"></div>
+      <div className="hidden lg:flex absolute left-6 w-6 h-6 bg-gradient-to-br from-lavender-primary to-sky-blue rounded-full border-4 border-white shadow-xl z-10 animate-pulse-subtle"></div>
       
       {/* Story Card */}
       <div className="lg:ml-20 w-full">
-        <Card className="bg-heritage-cornsilk border-heritage-burlywood shadow-md hover:shadow-lg transition-shadow">
-          <CardContent className="p-6">
+        <Card className="bg-white border-light-gray shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift rounded-2xl">
+          <CardContent className="p-8">
             {/* Story Header */}
-            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4">
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6">
               <div>
-                <h4 className="text-xl font-bold text-heritage-brown mb-1">{story.title}</h4>
-                <div className="flex items-center text-heritage-brown/70 text-sm space-x-4">
-                  <span>{formatDate(story.eventDate.toString())}</span>
+                <h4 className="text-2xl font-bold text-gray-dark mb-2">{story.title}</h4>
+                <div className="flex items-center text-gray-medium text-sm space-x-4">
+                  <span className="font-medium">{formatDate(story.eventDate.toString())}</span>
                   <span className="flex items-center">
-                    <Avatar className="w-6 h-6 mr-2 border border-heritage-peru">
+                    <Avatar className="w-7 h-7 mr-2 border-2 border-lavender-primary">
                       <AvatarImage src={story.author.profileImageUrl || undefined} />
-                      <AvatarFallback className="text-xs bg-heritage-beige text-heritage-brown">
+                      <AvatarFallback className="text-xs bg-lavender-light text-lavender-primary">
                         {getInitials(story.author.firstName || undefined, story.author.lastName || undefined)}
                       </AvatarFallback>
                     </Avatar>
-                    <span>{story.author.firstName} {story.author.lastName}</span>
+                    <span className="font-medium">{story.author.firstName} {story.author.lastName}</span>
                   </span>
                 </div>
               </div>
               {mediaType && (
-                <span className="bg-heritage-peru text-white px-3 py-1 rounded-full text-sm font-medium mt-2 sm:mt-0 flex items-center">
+                <span className="bg-gradient-to-r from-sky-blue to-lavender-primary text-white px-4 py-2 rounded-full text-sm font-semibold mt-3 sm:mt-0 flex items-center shadow-md">
                   {mediaType.icon}
-                  <span className="ml-1">{mediaType.label}</span>
+                  <span className="ml-2">{mediaType.label}</span>
                 </span>
               )}
             </div>
             
             {/* Story Content */}
-            <p className="text-heritage-brown/80 mb-4 leading-relaxed">
+            <p className="text-gray-medium mb-6 leading-relaxed text-lg">
               {story.description}
             </p>
             
             {/* Media Grid */}
             {story.mediaFiles.length > 0 && (
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
                 {story.mediaFiles.slice(0, 4).map((file, index) => (
-                  <div key={file.id} className="relative">
+                  <div key={file.id} className="relative group">
                     {file.mimeType.startsWith('image/') ? (
                       <img 
                         src={file.filePath} 
                         alt={file.originalName}
-                        className="aspect-square object-cover rounded-lg cursor-pointer hover:opacity-90 transition-opacity"
+                        className="aspect-square object-cover rounded-xl cursor-pointer hover:opacity-90 transition-all duration-200 hover-lift shadow-md group-hover:shadow-lg"
                       />
                     ) : file.mimeType.startsWith('video/') ? (
-                      <div className="aspect-square bg-heritage-beige rounded-lg flex items-center justify-center cursor-pointer hover:bg-heritage-cornsilk transition-colors relative">
-                        <Video className="text-heritage-brown" size={32} />
-                        <div className="absolute inset-0 bg-black/20 rounded-lg flex items-center justify-center">
-                          <Button variant="ghost" size="sm" className="bg-white/90 hover:bg-white text-heritage-brown rounded-full w-8 h-8 p-0">
-                            <Play size={16} />
+                      <div className="aspect-square bg-lavender-light rounded-xl flex items-center justify-center cursor-pointer hover:bg-sky-blue-light transition-colors relative shadow-md group-hover:shadow-lg hover-lift">
+                        <Video className="text-lavender-primary" size={32} />
+                        <div className="absolute inset-0 bg-black/20 rounded-xl flex items-center justify-center">
+                          <Button variant="ghost" size="sm" className="bg-white/90 hover:bg-white text-lavender-primary rounded-full w-10 h-10 p-0 shadow-md">
+                            <Play size={18} />
                           </Button>
                         </div>
                       </div>
                     ) : (
-                      <div className="aspect-square bg-heritage-beige rounded-lg flex flex-col items-center justify-center cursor-pointer hover:bg-heritage-cornsilk transition-colors">
-                        <Music className="text-heritage-brown mb-2" size={24} />
-                        <span className="text-xs text-heritage-brown text-center px-1 truncate w-full">
+                      <div className="aspect-square bg-sky-blue-light rounded-xl flex flex-col items-center justify-center cursor-pointer hover:bg-lavender-light transition-colors shadow-md group-hover:shadow-lg hover-lift">
+                        <Music className="text-sky-blue mb-2" size={28} />
+                        <span className="text-xs text-sky-blue text-center px-2 truncate w-full font-medium">
                           {file.originalName}
                         </span>
                       </div>
@@ -149,8 +149,8 @@ export default function TimelineItem({ story, isLast }: TimelineItemProps) {
                 ))}
                 
                 {story.mediaFiles.length > 4 && (
-                  <div className="aspect-square bg-heritage-brown/10 rounded-lg flex items-center justify-center cursor-pointer hover:bg-heritage-brown/20 transition-colors">
-                    <span className="text-heritage-brown font-semibold text-sm">
+                  <div className="aspect-square bg-gradient-to-br from-lavender-light to-sky-blue-light rounded-xl flex items-center justify-center cursor-pointer hover:from-lavender-secondary hover:to-sky-blue transition-all hover-lift shadow-md">
+                    <span className="text-lavender-primary font-bold text-sm">
                       +{story.mediaFiles.length - 4} more
                     </span>
                   </div>
@@ -159,50 +159,52 @@ export default function TimelineItem({ story, isLast }: TimelineItemProps) {
             )}
             
             {/* Story Actions */}
-            <div className="flex items-center justify-between pt-4 border-t border-heritage-burlywood">
-              <div className="flex items-center space-x-4">
+            <div className="flex items-center justify-between pt-6 border-t border-light-gray">
+              <div className="flex items-center space-x-6">
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => likeMutation.mutate()}
                   disabled={likeMutation.isPending}
-                  className={`flex items-center text-heritage-brown hover:text-heritage-chocolate transition-colors p-0 h-auto ${
-                    story.userHasLiked ? 'text-red-500 hover:text-red-600' : ''
+                  className={`flex items-center transition-all duration-200 p-0 h-auto hover-lift ${
+                    story.userHasLiked 
+                      ? 'text-red-500 hover:text-red-600' 
+                      : 'text-gray-medium hover:text-lavender-primary'
                   }`}
                 >
                   <Heart 
-                    size={16} 
-                    className={`mr-1 ${story.userHasLiked ? 'fill-current' : ''}`} 
+                    size={18} 
+                    className={`mr-2 ${story.userHasLiked ? 'fill-current' : ''}`} 
                   />
-                  <span>{story.likesCount}</span>
+                  <span className="font-medium">{story.likesCount}</span>
                 </Button>
                 
                 <Button
                   variant="ghost"
                   size="sm"
                   onClick={() => setShowComments(!showComments)}
-                  className="flex items-center text-heritage-brown hover:text-heritage-chocolate transition-colors p-0 h-auto"
+                  className="flex items-center text-gray-medium hover:text-sky-blue transition-all duration-200 p-0 h-auto hover-lift"
                 >
-                  <MessageCircle size={16} className="mr-1" />
-                  <span>{story.commentsCount}</span>
+                  <MessageCircle size={18} className="mr-2" />
+                  <span className="font-medium">{story.commentsCount}</span>
                 </Button>
                 
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="flex items-center text-heritage-brown hover:text-heritage-chocolate transition-colors p-0 h-auto"
+                  className="flex items-center text-gray-medium hover:text-lavender-primary transition-all duration-200 p-0 h-auto hover-lift"
                 >
-                  <Share2 size={16} className="mr-1" />
-                  Share
+                  <Share2 size={18} className="mr-2" />
+                  <span className="font-medium">Share</span>
                 </Button>
               </div>
               
               <Button
                 variant="ghost"
                 size="sm"
-                className="text-heritage-brown/60 hover:text-heritage-brown transition-colors p-0 h-auto"
+                className="text-gray-medium hover:text-lavender-primary transition-all duration-200 p-0 h-auto hover-lift"
               >
-                <MoreHorizontal size={16} />
+                <MoreHorizontal size={18} />
               </Button>
             </div>
           </CardContent>

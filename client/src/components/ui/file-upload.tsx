@@ -67,67 +67,75 @@ export default function FileUpload({ onFilesSelected, selectedFiles }: FileUploa
   };
 
   return (
-    <div>
-      <div 
-        className={`border-2 border-dashed rounded-xl p-8 text-center transition-colors ${
-          dragOver 
-            ? 'border-heritage-brown bg-heritage-cornsilk' 
-            : 'border-heritage-burlywood bg-heritage-cornsilk/30 hover:bg-heritage-cornsilk/50'
-        }`}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        onDrop={handleDrop}
-      >
-        <CloudUpload className="text-4xl text-heritage-peru mb-4 mx-auto" size={48} />
-        <h4 className="text-heritage-brown font-semibold mb-2">Upload Media Files</h4>
-        <p className="text-heritage-brown/70 mb-4">Drag and drop photos, videos, or audio files here</p>
-        <p className="text-sm text-heritage-brown/60 mb-4">Supported formats: JPG, PNG, MP4, MP3, WAV (Max 50MB per file)</p>
-        
-        <input
-          ref={fileInputRef}
-          type="file"
-          multiple
-          accept="image/*,video/*,audio/*"
-          onChange={handleFileSelect}
-          className="hidden"
-        />
-        
-        <Button
-          type="button"
-          onClick={() => fileInputRef.current?.click()}
-          className="bg-heritage-peru hover:bg-heritage-brown text-white px-6 py-2 font-medium"
+    <div className="space-y-6">
+      <div>
+        <label className="text-gray-dark font-semibold text-sm mb-2 block">
+          Media Files (Optional)
+        </label>
+        <div 
+          className={`border-2 border-dashed rounded-2xl p-8 text-center transition-all duration-200 ${
+            dragOver 
+              ? 'border-lavender-primary bg-lavender-light scale-[1.02]' 
+              : 'border-light-gray bg-sky-blue-light/30 hover:bg-sky-blue-light/50 hover:border-sky-blue'
+          }`}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          onDrop={handleDrop}
         >
-          Choose Files
-        </Button>
+          <CloudUpload className="text-lavender-primary mb-4 mx-auto animate-pulse-subtle" size={48} />
+          <h4 className="text-gray-dark font-semibold mb-2">Upload Media Files</h4>
+          <p className="text-gray-medium mb-3">Drag and drop photos, videos, or audio files here</p>
+          <p className="text-sm text-gray-medium mb-6">Supported formats: JPG, PNG, MP4, MP3, WAV (Max 50MB per file)</p>
+          
+          <input
+            ref={fileInputRef}
+            type="file"
+            multiple
+            accept="image/*,video/*,audio/*"
+            onChange={handleFileSelect}
+            className="hidden"
+          />
+          
+          <Button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            className="bg-sky-blue hover:bg-lavender-primary text-white px-8 py-3 font-semibold rounded-xl shadow-md hover:shadow-lg transition-all duration-200"
+          >
+            Choose Files
+          </Button>
+        </div>
       </div>
 
       {/* File Previews */}
       {selectedFiles.length > 0 && (
-        <div className="mt-6 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {selectedFiles.map((file, index) => (
-            <div key={index} className="relative group">
-              <div className="aspect-square bg-heritage-beige rounded-lg overflow-hidden border-2 border-heritage-burlywood flex flex-col items-center justify-center p-4">
-                <div className="text-heritage-brown mb-2">
-                  {getFileIcon(file)}
+        <div className="animate-fade-in">
+          <h5 className="text-gray-dark font-semibold mb-4">Selected Files ({selectedFiles.length})</h5>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {selectedFiles.map((file, index) => (
+              <div key={index} className="relative group animate-slide-up" style={{animationDelay: `${index * 0.1}s`}}>
+                <div className="aspect-square bg-lavender-light rounded-2xl overflow-hidden border-2 border-light-gray flex flex-col items-center justify-center p-4 hover-lift group-hover:shadow-lg transition-all duration-200">
+                  <div className="text-lavender-primary mb-2">
+                    {getFileIcon(file)}
+                  </div>
+                  <div className="text-center">
+                    <p className="text-xs text-gray-dark font-medium truncate w-full">
+                      {file.name}
+                    </p>
+                    <p className="text-xs text-gray-medium">
+                      {formatFileSize(file.size)}
+                    </p>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <p className="text-xs text-heritage-brown font-medium truncate w-full">
-                    {file.name}
-                  </p>
-                  <p className="text-xs text-heritage-brown/60">
-                    {formatFileSize(file.size)}
-                  </p>
-                </div>
+                <Button
+                  type="button"
+                  onClick={() => removeFile(index)}
+                  className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-7 h-7 p-0 opacity-0 group-hover:opacity-100 transition-all duration-200 hover:bg-red-600 shadow-md"
+                >
+                  <X size={14} />
+                </Button>
               </div>
-              <Button
-                type="button"
-                onClick={() => removeFile(index)}
-                className="absolute -top-2 -right-2 bg-red-500 text-white rounded-full w-6 h-6 p-0 opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-600"
-              >
-                <X size={12} />
-              </Button>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       )}
     </div>
