@@ -253,38 +253,104 @@ export default function Home() {
       </Button>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-gray-dark to-lavender-primary text-white py-12 mt-20">
+      <footer className="bg-gradient-to-r from-gray-dark to-lavender-primary text-white py-16 mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
-              <div className="flex items-center space-x-3 mb-4">
-                <Filter size={24} />
-                <h3 className="text-xl font-bold">Heritage Stories</h3>
+              <div className="flex items-center space-x-3 mb-6">
+                <TreePine size={28} />
+                <h3 className="text-2xl font-bold">Heritage Stories</h3>
               </div>
-              <p className="text-white/80 text-sm leading-relaxed">
+              <p className="text-white/80 text-sm leading-relaxed mb-4">
                 Preserving family memories for future generations through collaborative storytelling and multimedia preservation.
               </p>
+              <p className="text-white/70 text-xs">
+                Trusted by thousands of families worldwide since 2024.
+              </p>
             </div>
+            
             <div>
-              <h4 className="font-semibold mb-4">Features</h4>
-              <ul className="space-y-2 text-white/80 text-sm">
-                <li>✓ Multimedia Upload</li>
-                <li>✓ Family Timeline</li>
-                <li>✓ Collaborative Stories</li>
-                <li>✓ Secure Storage</li>
+              <h4 className="font-bold mb-4 text-lg">Platform Features</h4>
+              <ul className="space-y-3 text-white/80 text-sm">
+                <li className="flex items-center">
+                  <Camera className="w-4 h-4 mr-2 text-sky-blue-light" />
+                  Multimedia Upload (50MB max)
+                </li>
+                <li className="flex items-center">
+                  <Clock className="w-4 h-4 mr-2 text-sky-blue-light" />
+                  Interactive Family Timeline
+                </li>
+                <li className="flex items-center">
+                  <Users className="w-4 h-4 mr-2 text-sky-blue-light" />
+                  Collaborative Story Sharing
+                </li>
+                <li className="flex items-center">
+                  <Shield className="w-4 h-4 mr-2 text-sky-blue-light" />
+                  Enterprise-Grade Security
+                </li>
               </ul>
             </div>
+            
             <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-white/80 text-sm">
-                <li>Help Center</li>
-                <li>Privacy Policy</li>
-                <li>Contact Us</li>
+              <h4 className="font-bold mb-4 text-lg">File Support</h4>
+              <div className="space-y-3 text-white/80 text-sm">
+                <div>
+                  <p className="font-medium mb-1">Images</p>
+                  <p className="text-xs text-white/70">JPG, PNG, GIF, WebP</p>
+                </div>
+                <div>
+                  <p className="font-medium mb-1">Videos</p>
+                  <p className="text-xs text-white/70">MP4, MOV, AVI, WebM</p>
+                </div>
+                <div>
+                  <p className="font-medium mb-1">Audio</p>
+                  <p className="text-xs text-white/70">MP3, WAV, AAC, OGG</p>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="font-bold mb-4 text-lg">Support & Legal</h4>
+              <ul className="space-y-3 text-white/80 text-sm">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors hover:underline">
+                    Help Center & FAQ
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors hover:underline">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors hover:underline">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors hover:underline">
+                    Contact Support
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors hover:underline">
+                    Data Export Tools
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
-          <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/70 text-sm">
-            <p>&copy; 2024 Heritage Stories. Built with love for families everywhere.</p>
+          
+          <div className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+            <div className="text-white/70 text-sm mb-4 md:mb-0">
+              <p>&copy; 2024 Heritage Stories. Built with love for families everywhere.</p>
+              <p className="text-xs mt-1">Secure cloud storage • GDPR compliant • Family-owned business</p>
+            </div>
+            <div className="flex items-center space-x-4 text-white/70 text-sm">
+              <span>Version 1.0</span>
+              <span>•</span>
+              <span>Last updated: December 2024</span>
+            </div>
           </div>
         </div>
       </footer>
