@@ -24,16 +24,26 @@
   --ring: hsl(262, 83%, 58%);
   --radius: 0.75rem;
   
-  /* Modern elegant theme colors */
-  --lavender-primary: hsl(262, 83%, 58%);
-  --lavender-secondary: hsl(267, 57%, 78%);
-  --lavender-light: hsl(270, 60%, 95%);
-  --sky-blue: hsl(199, 89%, 48%);
-  --sky-blue-light: hsl(204, 100%, 94%);
-  --soft-white: hsl(0, 0%, 98%);
-  --light-gray: hsl(220, 14%, 96%);
-  --gray-medium: hsl(215, 16%, 47%);
-  --gray-dark: hsl(218, 27%, 15%);
+  /* Vibrant colorful theme colors */
+  --lavender-primary: hsl(270, 75%, 65%);
+  --lavender-secondary: hsl(280, 85%, 70%);
+  --lavender-light: hsl(270, 60%, 90%);
+  --sky-blue: hsl(195, 100%, 55%);
+  --sky-blue-light: hsl(200, 100%, 80%);
+  
+  /* New vibrant accent colors */
+  --coral-pink: hsl(351, 83%, 74%);
+  --mint-green: hsl(142, 76%, 65%);
+  --sunset-orange: hsl(25, 95%, 60%);
+  --golden-yellow: hsl(45, 93%, 55%);
+  --electric-purple: hsl(285, 85%, 65%);
+  --ocean-teal: hsl(174, 72%, 56%);
+  
+  /* Enhanced neutrals */
+  --soft-white: hsl(0, 0%, 99%);
+  --light-gray: hsl(220, 14%, 94%);
+  --gray-medium: hsl(215, 20%, 45%);
+  --gray-dark: hsl(218, 30%, 20%);
 }
 
 .dark {
@@ -146,6 +156,20 @@
   .bg-gray-dark {
     background-color: var(--gray-dark);
   }
+
+  /* Vibrant accent colors */
+  .coral-pink { color: var(--coral-pink); }
+  .bg-coral-pink { background-color: var(--coral-pink); }
+  .mint-green { color: var(--mint-green); }
+  .bg-mint-green { background-color: var(--mint-green); }
+  .sunset-orange { color: var(--sunset-orange); }
+  .bg-sunset-orange { background-color: var(--sunset-orange); }
+  .golden-yellow { color: var(--golden-yellow); }
+  .bg-golden-yellow { background-color: var(--golden-yellow); }
+  .electric-purple { color: var(--electric-purple); }
+  .bg-electric-purple { background-color: var(--electric-purple); }
+  .ocean-teal { color: var(--ocean-teal); }
+  .bg-ocean-teal { background-color: var(--ocean-teal); }
   
   /* Border colors */
   .border-lavender-primary {

@@ -248,7 +248,7 @@ export default function Home() {
       {/* Floating Action Button */}
       <Button
         onClick={() => setShowStoryForm(true)}
-        className="fixed bottom-8 right-8 bg-lavender-primary hover:bg-lavender-secondary text-white w-16 h-16 rounded-full shadow-xl hover:shadow-2xl z-50 p-0 hover-lift animate-pulse-subtle"
+        className="fixed bottom-8 right-8 bg-gradient-to-r from-coral-pink to-electric-purple hover:from-golden-yellow hover:to-sunset-orange text-white w-16 h-16 rounded-full shadow-xl hover:shadow-2xl z-50 p-0 hover-lift animate-pulse-subtle"
       >
         <Plus size={24} />
       </Button>

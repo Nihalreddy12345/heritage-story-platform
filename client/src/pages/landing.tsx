@@ -9,7 +9,7 @@ export default function Landing() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-soft-white via-sky-blue-light to-lavender-light smooth-scroll">
+    <div className="min-h-screen bg-gradient-to-br from-soft-white via-mint-green to-coral-pink smooth-scroll">
       {/* Header */}
       <header className="glass-effect sticky top-0 z-40 border-b border-light-gray shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -18,7 +18,7 @@ export default function Landing() {
               <TreePine className="text-lavender-primary text-3xl" size={32} />
               <h1 className="text-2xl font-bold text-gray-dark">Heritage Stories</h1>
             </div>
-            <Button onClick={handleLogin} className="bg-lavender-primary hover:bg-lavender-secondary text-white px-8 py-3 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover-lift">
+            <Button onClick={handleLogin} className="bg-gradient-to-r from-electric-purple to-coral-pink hover:from-golden-yellow hover:to-sunset-orange text-white px-8 py-3 font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 hover-lift">
               Get Started
             </Button>
           </div>
@@ -30,7 +30,7 @@ export default function Landing() {
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="text-5xl lg:text-7xl font-bold text-gray-dark mb-8 leading-tight">
             Preserve Your Family's
-            <span className="block text-transparent bg-gradient-to-r from-lavender-primary to-sky-blue bg-clip-text">
+            <span className="block text-transparent bg-gradient-to-r from-coral-pink via-electric-purple to-ocean-teal bg-clip-text">
               Legacy Forever
             </span>
           </h2>
@@ -51,7 +51,7 @@ export default function Landing() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           <Card className="bg-white border-light-gray shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift rounded-2xl animate-slide-up">
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-lavender-primary to-sky-blue rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-coral-pink to-sunset-orange rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Camera className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-dark mb-4">Multimedia Stories</h3>
@@ -63,7 +63,7 @@ export default function Landing() {
 
           <Card className="bg-white border-light-gray shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift rounded-2xl animate-slide-up" style={{animationDelay: '0.1s'}}>
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-sky-blue to-lavender-secondary rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-ocean-teal to-mint-green rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Clock className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-dark mb-4">Timeline View</h3>
@@ -75,7 +75,7 @@ export default function Landing() {
 
           <Card className="bg-white border-light-gray shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift rounded-2xl animate-slide-up" style={{animationDelay: '0.2s'}}>
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-lavender-secondary to-lavender-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-electric-purple to-lavender-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-dark mb-4">Collaborative</h3>
@@ -87,7 +87,7 @@ export default function Landing() {
 
           <Card className="bg-white border-light-gray shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift rounded-2xl animate-slide-up" style={{animationDelay: '0.3s'}}>
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-sky-blue-light to-sky-blue rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-golden-yellow to-sunset-orange rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-dark mb-4">Secure Storage</h3>
@@ -99,7 +99,7 @@ export default function Landing() {
 
           <Card className="bg-white border-light-gray shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift rounded-2xl animate-slide-up" style={{animationDelay: '0.4s'}}>
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-lavender-primary to-sky-blue-light rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-coral-pink to-electric-purple rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <Heart className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-dark mb-4">Family Bonding</h3>
@@ -111,7 +111,7 @@ export default function Landing() {
 
           <Card className="bg-white border-light-gray shadow-lg hover:shadow-2xl transition-all duration-300 hover-lift rounded-2xl animate-slide-up" style={{animationDelay: '0.5s'}}>
             <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-sky-blue to-lavender-primary rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-mint-green to-ocean-teal rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <TreePine className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold text-gray-dark mb-4">Legacy Building</h3>
@@ -133,7 +133,7 @@ export default function Landing() {
           <Button 
             onClick={handleLogin}
             size="lg"
-            className="bg-gradient-to-r from-lavender-primary to-sky-blue hover:from-lavender-secondary hover:to-lavender-primary text-white px-12 py-4 text-lg font-bold shadow-xl hover:shadow-2xl rounded-2xl animate-pulse-subtle hover-lift"
+            className="bg-gradient-to-r from-coral-pink to-sunset-orange hover:from-electric-purple hover:to-coral-pink text-white px-12 py-4 text-lg font-bold shadow-xl hover:shadow-2xl rounded-2xl animate-pulse-subtle hover-lift"
           >
             Get Started for Free
           </Button>
