@@ -31,21 +31,33 @@ This is a full-stack web app where families can preserve and share their stories
 ## 🚀 Getting Started
 
 ###1. Clone the repo
+
 git clone https://github.com/Nihalreddy12345/heritage-story-platform.git
+
 cd heritage-story-platform
 
 ###2. Set up the backend
+
 Copy
+
 Edit
+
 cd server
+
 npm install
+
 node index.js
 
 ###3. Run the frontend
+
 Copy
+
 Edit
+
 cd client
+
 npm install #configure .env for DB connection
+
 npm start
 
 App will run at:
