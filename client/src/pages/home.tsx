@@ -8,7 +8,8 @@ import Navigation from "@/components/navigation";
 import StoryForm from "@/components/story-form";
 import TimelineItem from "@/components/timeline-item";
 import { Button } from "@/components/ui/button";
-import { Plus, Filter, ChevronDown } from "lucide-react";
+import { Plus, Filter, ChevronDown, TreePine, Users, Clock, Shield, Camera, MapPin, Phone, Mail, Globe } from "lucide-react";
+import { FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 
 export default function Home() {
   const { toast } = useToast();
@@ -261,12 +262,48 @@ export default function Home() {
                 <TreePine size={28} />
                 <h3 className="text-2xl font-bold">Heritage Stories</h3>
               </div>
-              <p className="text-white/80 text-sm leading-relaxed mb-4">
+              <p className="text-white/80 text-sm leading-relaxed mb-6">
                 Preserving family memories for future generations through collaborative storytelling and multimedia preservation.
               </p>
-              <p className="text-white/70 text-xs">
-                Trusted by thousands of families worldwide since 2024.
-              </p>
+              
+              {/* Contact Information */}
+              <div className="space-y-3 mb-6">
+                <div className="flex items-center text-white/80 text-sm">
+                  <MapPin className="w-4 h-4 mr-3 text-sky-blue-light flex-shrink-0" />
+                  <span>Dreamland Heritage Foundation, New Haven, CT</span>
+                </div>
+                <div className="flex items-center text-white/80 text-sm">
+                  <Phone className="w-4 h-4 mr-3 text-sky-blue-light flex-shrink-0" />
+                  <a href="tel:+1-203-555-1234" className="hover:text-white transition-colors">
+                    +1 (203) 555-1234
+                  </a>
+                </div>
+                <div className="flex items-center text-white/80 text-sm">
+                  <Mail className="w-4 h-4 mr-3 text-sky-blue-light flex-shrink-0" />
+                  <a href="mailto:support@heritagestory.com" className="hover:text-white transition-colors">
+                    support@heritagestory.com
+                  </a>
+                </div>
+                <div className="flex items-center text-white/80 text-sm">
+                  <Globe className="w-4 h-4 mr-3 text-sky-blue-light flex-shrink-0" />
+                  <a href="https://www.heritagestory.com" className="hover:text-white transition-colors">
+                    www.heritagestory.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Social Media Icons */}
+              <div className="flex space-x-4">
+                <a href="#" className="text-white/70 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg">
+                  <FaLinkedin size={20} />
+                </a>
+                <a href="#" className="text-white/70 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg">
+                  <FaInstagram size={20} />
+                </a>
+                <a href="#" className="text-white/70 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-lg">
+                  <FaFacebook size={20} />
+                </a>
+              </div>
             </div>
             
             <div>
